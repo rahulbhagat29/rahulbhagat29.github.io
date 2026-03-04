@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rahul Bhagat | Data Analyst Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy:         #0f2a4a;
+    --blue:         #1a5276;
+    --accent:       #2e86c1;
+    --light-accent: #aed6f1;
+    --gold:         #d4a017;
+    --bg:           #f8f9fb;
+    --white:        #ffffff;
+    --text:         #1c2b3a;
+    --muted:        #5d7080;
+    --border:       #dde4ec;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy);
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 60px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  }
+  nav .logo {
+    font-family: 'DM Serif Display', serif;
+    color: var(--white);
+    font-size: 1.15rem;
+    letter-spacing: .5px;
+  }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul a {
+    color: var(--light-accent);
+    text-decoration: none;
+    font-size: .88rem;
+    font-weight: 500;
+    letter-spacing: .4px;
+    transition: color .2s;
+  }
+  nav ul a:hover { color: var(--white); }
+
+  /* ── HERO ── */
+  #home {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    color: var(--white);
+    padding: 90px 5% 80px;
+    display: flex; align-items: center; gap: 60px; flex-wrap: wrap;
+  }
+  .hero-text { flex: 1; min-width: 280px; }
+  .hero-text .greeting {
+    font-size: .9rem;
+    color: var(--light-accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .hero-text h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .hero-text h1 span { color: var(--gold); }
+  .hero-subtitle {
+    font-size: .95rem;
+    color: var(--light-accent);
+    letter-spacing: .4px;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  .hero-text p {
+    font-size: 1rem;
+    color: #cfe0ef;
+    max-width: 560px;
+    margin-bottom: 28px;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    padding: 11px 26px;
+    border-radius: 4px;
+    font-size: .9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .2s;
+    display: inline-block;
+  }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: #e0b020; transform: translateY(-1px); }
+  .btn-outline { border: 1.5px solid var(--light-accent); color: var(--light-accent); }
+  .btn-outline:hover { background: rgba(255,255,255,.08); }
+  .hero-stats { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 40px; }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: .78rem;
+    color: var(--light-accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ── SHARED SECTION ── */
+  section { padding: 72px 5%; }
+  .section-label {
+    font-size: .78rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--navy);
+    margin-bottom: 40px;
+  }
+
+  /* ── ABOUT (old file layout) ── */
+  #about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .about-text p { color: var(--muted); margin-bottom: 16px; font-size: .97rem; }
+  .about-text p strong { color: var(--text); }
+  .edu-block {
+    background: var(--bg);
+    border-left: 3px solid var(--accent);
+    padding: 18px 20px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 24px;
+  }
+  .edu-block p { margin: 0; font-size: .93rem; color: var(--text); }
+  .edu-block .cgpa { color: var(--accent); font-weight: 600; }
+
+  /* ── SKILLS (old file cards) ── */
+  #skills { background: var(--bg); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .skill-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 24px;
+    transition: box-shadow .2s, transform .2s;
+  }
+  .skill-card:hover { box-shadow: 0 6px 20px rgba(15,42,74,.1); transform: translateY(-2px); }
+  .skill-card h4 {
+    font-size: .78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .skill-card p { font-size: .9rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── PROJECTS (old file cards) ── */
+  #projects { background: var(--white); }
+  .project-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 30px 32px;
+    margin-bottom: 24px;
+    transition: box-shadow .2s;
+  }
+  .project-card:hover { box-shadow: 0 8px 24px rgba(15,42,74,.09); }
+  .proj-meta {
+    display: flex; align-items: center; gap: 10px;
+    flex-wrap: wrap; margin-bottom: 12px;
+  }
+  .proj-tag {
+    background: var(--light-accent);
+    color: var(--navy);
+    font-size: .73rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: .5px;
+  }
+  .proj-tag.sql   { background: #d5f5e3; color: #1e8449; }
+  .proj-tag.excel { background: #fdebd0; color: #935116; }
+  .proj-tag.py    { background: #e8daef; color: #6c3483; }
+  .project-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .proj-domain {
+    font-size: .82rem;
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+  .project-card p { font-size: .93rem; color: var(--muted); margin-bottom: 10px; }
+  .insight-box {
+    background: var(--white);
+    border-left: 3px solid var(--gold);
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 14px 0;
+    font-size: .88rem;
+    color: var(--text);
+  }
+  .insight-box strong { color: var(--navy); }
+  .proj-links { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+  .proj-link {
+    font-size: .85rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1.5px solid var(--accent);
+    padding: 6px 16px;
+    border-radius: 4px;
+    transition: all .2s;
+  }
+  .proj-link:hover { background: var(--accent); color: var(--white); }
+
+  /* ── CERTIFICATIONS ── */
+  #certifications { background: var(--bg); }
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .cert-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 24px;
+    transition: box-shadow .2s;
+  }
+  .cert-card:hover { box-shadow: 0 6px 18px rgba(15,42,74,.09); }
+  .cert-card h4 { font-size: 1rem; color: var(--navy); font-weight: 600; margin-bottom: 6px; }
+  .cert-card .issuer { font-size: .84rem; color: var(--accent); margin-bottom: 4px; font-weight: 500; }
+  .cert-card .cert-date { font-size: .78rem; color: var(--muted); margin-bottom: 8px; }
+  .cert-card p { font-size: .84rem; color: var(--muted); line-height: 1.5; }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+  }
+  #contact .section-label { color: var(--light-accent); }
+  #contact .section-title { color: var(--white); margin-bottom: 14px; }
+  #contact .sub { color: var(--light-accent); margin-bottom: 36px; font-size: .97rem; }
+  .contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .contact-link {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 12px 22px;
+    border-radius: 6px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: .9rem;
+    transition: background .2s, border-color .2s;
+  }
+  .contact-link:hover { background: rgba(255,255,255,.14); border-color: var(--gold); }
+  .contact-link .icon { font-size: 1.1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #091e35;
+    text-align: center;
+    padding: 18px;
+    font-size: .8rem;
+    color: #5d7f9a;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 760px) {
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  }
+  @media (max-width: 600px) {
+    #home { padding: 60px 5%; }
+    nav ul { gap: 1rem; }
+    .hero-stats { gap: 24px; }
+    .project-card { padding: 22px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Rahul Bhagat</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO — latest index.html content ───────────────────────────────────── -->
+<section id="home">
+  <div class="hero-text">
+    <p class="greeting">Hello, I am</p>
+    <h1>Rahul <span>Bhagat</span>.</h1>
+    <p class="hero-subtitle">Data Analyst &nbsp;/&nbsp; Finance & Business Analyst &nbsp;/&nbsp; Retail & E-Commerce Analyst</p>
+    <p>
+      Commerce graduate from the University of Mumbai transitioning into Data Analytics.
+      I build finance-safe, decision-ready dashboards — not decorative reports.
+      My B.Com background gives me a natural edge in P&L, margin analysis, and revenue metrics
+      that most technically-trained candidates lack.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary">View My Projects</a>
+      <a href="https://github.com/rahulbhagat29" target="_blank" class="btn btn-outline">GitHub</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">End-to-End<br>Projects</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Tools<br>Mastered</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">ISO<br>Certifications</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT — old file layout; cert paragraph + target roles from latest ── -->
+<section id="about">
+  <div class="about-grid">
+
+    <!-- LEFT: old file structure -->
+    <div class="about-text">
+      <div class="section-label">About Me</div>
+      <div class="section-title">Commerce-first.<br/>Data-driven.</div>
+
+      <p>I am a <strong>B.Com graduate from the University of Mumbai</strong> transitioning into
+      Data Analytics. My commerce background gives me an edge most technical candidates lack —
+      I understand P&L statements, gross margin trends, and revenue concentration risks before
+      I touch a dataset.</p>
+
+      <p>I have worked on end-to-end projects in <strong>Retail, E-Commerce, and Finance
+      domains</strong> using Power BI, SQL, Advanced Excel, and Python. My work is consistently
+      framed around business decisions, not tool demonstrations.</p>
+
+      <!-- Certification paragraph — latest index.html version -->
+      <p>Certified by <strong>Digifine Academy of Digital Education, Mumbai</strong> — ISO Certified
+      in Data Analytics, Power BI, and Tableau (Mar 2026). Awarded a 3-month internship letter
+      on completion of the 6-month bootcamp.</p>
+
+      <!-- Target roles — latest index.html -->
+      <p>Targeting <strong>Data Analyst roles in Finance, E-Commerce, or Business Consulting</strong>
+      where domain-grounded thinking is valued alongside technical execution.</p>
+
+      <!-- Education block — old file -->
+      <div class="edu-block">
+        <p><strong>University of Mumbai</strong> — B.Com, Mumbai, India</p>
+        <p class="cgpa">CGPA: 7.68 &nbsp;|&nbsp; 2022–2025</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: key skills — old file exactly -->
+    <div>
+      <div class="section-label">&nbsp;</div>
+      <div class="section-title" style="font-size:1.3rem; margin-bottom:20px;">Key Skills</div>
+      <div style="display:flex; flex-wrap:wrap; gap:10px;">
+        <span class="proj-tag">Power BI</span>
+        <span class="proj-tag">DAX</span>
+        <span class="proj-tag sql">SQL / MySQL</span>
+        <span class="proj-tag excel">Advanced Excel</span>
+        <span class="proj-tag sql">Python</span>
+        <span class="proj-tag">Pandas</span>
+        <span class="proj-tag excel">Pivot Tables</span>
+        <span class="proj-tag">Star Schema</span>
+        <span class="proj-tag sql">EDA</span>
+        <span class="proj-tag excel">P&L Analysis</span>
+        <span class="proj-tag">Data Storytelling</span>
+        <span class="proj-tag sql">Stakeholder Comms</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── SKILLS — latest index.html ─────────────────────────────────────────── -->
+<section id="skills">
+  <div class="section-label">What I Work With</div>
+  <div class="section-title">Skills</div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h4>Visualisation & BI</h4>
+      <p>Power BI, DAX, Power Query, Star Schema Data Modelling, Dashboard Design, Power BI Service</p>
+    </div>
+    <div class="skill-card">
+      <h4>Database & SQL</h4>
+      <p>MySQL — Multi-table Joins, Subqueries, Aggregations, CTEs, Window Functions, Stored Procedures, Data Quality Checks</p>
+    </div>
+    <div class="skill-card">
+      <h4>Programming & Analytics</h4>
+      <p>Python, Pandas, NumPy, Matplotlib, Seaborn, Exploratory Data Analysis, Customer Segmentation</p>
+    </div>
+    <div class="skill-card">
+      <h4>Spreadsheet & Reporting</h4>
+      <p>Advanced Excel, Pivot Tables, Power Query, KPI Design, Finance-safe Data Validation, Financial Reporting</p>
+    </div>
+    <div class="skill-card">
+      <h4>Finance & Business Acumen</h4>
+      <p>P&L Fundamentals, Gross & Net Revenue, Profit Margin Analysis, YoY Growth, Discount Impact, Revenue Concentration Risk</p>
+    </div>
+    <div class="skill-card">
+      <h4>Core Skills</h4>
+      <p>Stakeholder Communication, Data Storytelling, Business Recommendations, Critical Thinking, Problem Framing</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS — latest index.html ───────────────────────────────────────── -->
+<section id="projects">
+  <div class="section-label">My Work</div>
+  <div class="section-title">Projects</div>
+
+  <!-- Project 1 -->
+  <div class="project-card">
+    <div class="proj-meta">
+      <span class="proj-tag">Power BI</span>
+      <span class="proj-tag">DAX</span>
+      <span class="proj-tag excel">Excel</span>
+      <span class="proj-tag">Star Schema</span>
+      <span class="proj-tag">Time Intelligence</span>
+    </div>
+    <h3>Retail Executive Revenue & Margin Performance Dashboard</h3>
+    <p class="proj-domain">Retail Domain &nbsp;|&nbsp; 2026</p>
+    <p>
+      A multi-category retail business had steady revenue growth from 2022–2024 but lacked visibility into whether
+      growth was sustainable, margin-efficient, and evenly distributed across products, regions, and customer segments.
+      Leadership could not answer critical financial stability questions from raw data alone.
+    </p>
+    <div class="insight-box">
+      <strong>Business Decision Informed:</strong> Confirmed $6.55M revenue maintained a stable ~27.7% profit margin
+      throughout growth — proving growth is margin-efficient, not volume-inflated. Discount clustering showed no severe
+      sub-category erosion but flagged as a recurring KPI for the finance function to monitor quarterly.
+    </div>
+    <p>
+      Built a 3-page executive dashboard with a star schema data model. DAX measures covered Total Revenue, Profit Margin %,
+      YoY Growth, MoM Growth, and Top/Bottom N product rankings using safe DIVIDE logic. Evaluated customer revenue
+      concentration and regional performance distribution.
+    </p>
+    <div class="proj-links">
+      <a href="https://github.com/rahulbhagat29/retail-executive-powerbi-dashboard" target="_blank" class="proj-link">↗ View on GitHub</a>
+    </div>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="project-card">
+    <div class="proj-meta">
+      <span class="proj-tag sql">SQL</span>
+      <span class="proj-tag py">Python</span>
+      <span class="proj-tag py">Pandas</span>
+      <span class="proj-tag py">Matplotlib</span>
+      <span class="proj-tag py">Seaborn</span>
+    </div>
+    <h3>Customer Retention & Revenue Concentration Analysis</h3>
+    <p class="proj-domain">E-Commerce Domain &nbsp;|&nbsp; 2026</p>
+    <p>
+      An e-commerce business faced unsustainable customer acquisition costs. Leadership needed to determine whether
+      revenue growth relied on repeat customers or constant new acquisition — a critical input for allocating marketing
+      budget and reducing revenue volatility.
+    </p>
+    <div class="insight-box">
+      <strong>Business Decision Informed:</strong> Found the business was acquisition-dependent with high one-time buyer
+      concentration — a direct risk to revenue stability. Pareto analysis confirmed extreme revenue concentration in a small
+      customer subset. Recommended shifting budget from acquisition to a VIP retention programme as the highest-ROI growth lever.
+    </div>
+    <p>
+      Used multi-table SQL joins across Customers, Orders, and Order Items tables with business-safe filters to exclude
+      cancelled and test transactions. Classified customers in Python into One-Time Buyers vs Repeat Customers.
+      Conducted Pareto revenue concentration analysis and built executive-ready visualisations.
+    </p>
+    <div class="proj-links">
+      <a href="https://github.com/rahulbhagat29/customer-retention-revenue-analysis" target="_blank" class="proj-link">↗ View on GitHub</a>
+    </div>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="project-card">
+    <div class="proj-meta">
+      <span class="proj-tag excel">Advanced Excel</span>
+      <span class="proj-tag excel">Pivot Tables</span>
+      <span class="proj-tag excel">Power Query</span>
+    </div>
+    <h3>Retail Revenue Analysis & Finance-Safe KPI Dashboard</h3>
+    <p class="proj-domain">Retail Domain &nbsp;|&nbsp; 2025</p>
+    <p>
+      Raw retail transaction data contained refunds, zero-quantity rows, and pricing mismatches — making revenue
+      numbers unreliable for business decision-making. An executive-ready dashboard required finance-safe KPI
+      definitions before any visualisation could be trusted.
+    </p>
+    <div class="insight-box">
+      <strong>Business Decision Informed:</strong> Strong net-to-gross revenue alignment confirmed pricing discipline
+      and minimal leakage. Significant regional performance gaps and high sales volatility flagged as two priority areas
+      for operational investigation. Product category concentration identified as a structural dependency risk
+      requiring diversification strategy.
+    </div>
+    <p>
+      Defined and calculated three finance-safe KPIs — Gross Sales, Net Revenue, and Refund Impact — treating each
+      data anomaly as a business logic decision rather than a removal problem. Built an executive dashboard with
+      trend, risk, and performance views structured for a finance audience.
+    </p>
+    <div class="proj-links">
+      <a href="https://github.com/rahulbhagat29/retail-revenue-analysis" target="_blank" class="proj-link">↗ View on GitHub</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── CERTIFICATIONS ─────────────────────────────────────────────────────── -->
+<section id="certifications">
+  <div class="section-label">Credentials</div>
+  <div class="section-title">Certifications</div>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <h4>ISO Certified: Data Analytics</h4>
+      <div class="issuer">Digifine Academy of Digital Education, Mumbai</div>
+      <div class="cert-date">March 2026</div>
+      <p>ISO-recognised certification covering end-to-end data analytics methodology, KPI design, and business reporting.</p>
+    </div>
+    <div class="cert-card">
+      <h4>ISO Certified: Power BI</h4>
+      <div class="issuer">Digifine Academy of Digital Education, Mumbai</div>
+      <div class="cert-date">March 2026</div>
+      <p>ISO-recognised certification in Power BI dashboard development, DAX measures, and data modelling.</p>
+    </div>
+    <div class="cert-card">
+      <h4>ISO Certified: Tableau</h4>
+      <div class="issuer">Digifine Academy of Digital Education, Mumbai</div>
+      <div class="cert-date">March 2026</div>
+      <p>ISO-recognised certification in Tableau visualisation, dashboard design, and analytical reporting.</p>
+    </div>
+    <div class="cert-card">
+      <h4>Data Analytics Bootcamp — 6 Months</h4>
+      <div class="issuer">Digifine Academy of Digital Education, Mumbai</div>
+      <div class="cert-date">March 2026 &nbsp;|&nbsp; Includes 3-Month Internship Letter</div>
+      <p>Covered Excel, SQL, Python (Pandas, NumPy, Matplotlib, Seaborn), Power BI, Tableau, and Statistics with live project work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT — latest index.html, plain email ───────────────────────────── -->
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <div class="section-title">Let's Connect</div>
+  <p class="sub">I am open to Data Analyst opportunities in Finance, E-Commerce, and Business Analytics.</p>
+  <div class="contact-links">
+    <a href="mailto:rahulbhagat2509@gmail.com" class="contact-link">
+      <span class="icon">✉</span> rahulbhagat2509@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/rahul-bhagat-6439853b4" target="_blank" class="contact-link">
+      <span class="icon">in</span> LinkedIn
+    </a>
+    <a href="https://github.com/rahulbhagat29" target="_blank" class="contact-link">
+      <span class="icon">⌥</span> GitHub
+    </a>
+    <a href="tel:+919321759915" class="contact-link">
+      <span class="icon">☎</span> +91 93217 59915
+    </a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Rahul Bhagat &nbsp;|&nbsp; Data Analyst &nbsp;|&nbsp; Mumbai, India
+</footer>
+
+</body>
+</html>
