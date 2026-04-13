@@ -204,6 +204,7 @@
   .proj-tag.sql   { background: #d5f5e3; color: #1e8449; }
   .proj-tag.excel { background: #fdebd0; color: #935116; }
   .proj-tag.py    { background: #e8daef; color: #6c3483; }
+  .proj-tag.bi    { background: #d6eaf8; color: #1a5276; }
   .project-card h3 {
     font-family: 'DM Serif Display', serif;
     font-size: 1.25rem;
@@ -394,18 +395,21 @@
       <div class="section-label">&nbsp;</div>
       <div class="section-title" style="font-size:1.3rem; margin-bottom:20px;">Key Skills</div>
       <div style="display:flex; flex-wrap:wrap; gap:10px;">
-        <span class="proj-tag">Power BI</span>
-        <span class="proj-tag">DAX</span>
-        <span class="proj-tag sql">SQL / MySQL</span>
+        <span class="proj-tag py">SQL / MySQL</span>
+        <span class="proj-tag py">Python</span>
+        <span class="proj-tag bi">Power BI</span>
+        <span class="proj-tag bi">Tableau</span>
         <span class="proj-tag excel">Advanced Excel</span>
-        <span class="proj-tag sql">Python</span>
-        <span class="proj-tag">Pandas</span>
-        <span class="proj-tag excel">Pivot Tables</span>
-        <span class="proj-tag">Star Schema</span>
-        <span class="proj-tag sql">EDA</span>
-        <span class="proj-tag excel">P&L Analysis</span>
-        <span class="proj-tag">Data Storytelling</span>
-        <span class="proj-tag sql">Stakeholder Comms</span>
+        <span class="proj-tag py">Matplotlib</span>
+        <span class="proj-tag py">Seaborn</span>
+        <span class="proj-tag excel">Statistics</span>
+        <span class="proj-tag sql">Reporting & KPI Design</span>
+        <span class="proj-tag sql">P&L Analysis</span>
+        <span class="proj-tag bi">Business Communication</span>
+        <span class="proj-tag bi">Decision-Making</span>
+        <span class="proj-tag excel">Critical Thinking</span>
+        <span class="proj-tag sql">Structured Problem Solving</span>
+        <span class="proj-tag">AI Automation Tools</span>
       </div>
     </div>
 
@@ -452,14 +456,14 @@
     Projects ranked by business impact and decision complexity.
   </p>
 
-  <!-- Project 1 — Loan Risk Analysis -->
+  <!-- Project 1 — LendingClub Loan Risk -->
   <div class="project-card">
     <div class="proj-meta">
-      <span class="proj-tag py">Python-Pandas</span>
-      <span class="proj-tag py">Jupyter Notebook</span>
-      <span class="proj-tag sql">MySQL</span>
-      <span class="proj-tag sql">Power BI</span>
+      <span class="proj-tag py">Python</span>
+      <span class="proj-tag py">Pandas</span>
+      <span class="proj-tag py">MySQL</span>
       <span class="proj-tag py">EDA</span>
+      <span class="proj-tag py">Policy Simulation</span>
     </div>
     <h3>LendingClub Loan Risk &amp; Portfolio Profit Analysis</h3>
     <p class="proj-domain">Finance / Lending &nbsp;|&nbsp; 2026</p>
@@ -481,40 +485,15 @@
     </div>
   </div>
 
-  <!-- Project 2 — Retail Executive Revenue & Margin -->
+  <!-- Project 2 — FinEdge -->
   <div class="project-card">
     <div class="proj-meta">
-      <span class="proj-tag">Power BI</span>
-      <span class="proj-tag">DAX</span>
-      <span class="proj-tag excel">Excel</span>
-      <span class="proj-tag">Star Schema</span>
-      <span class="proj-tag">Time Intelligence</span>
+      <span class="proj-tag bi">Power BI</span>
+      <span class="proj-tag bi">Power Query</span>
+      <span class="proj-tag bi">DAX</span>
+      <span class="proj-tag bi">Financial Reporting</span>
     </div>
-    <h3>Retail Executive Revenue &amp; Margin Performance Dashboard</h3>
-    <p class="proj-domain">Retail Domain &nbsp;|&nbsp; 2026</p>
-    <div class="insight-box">
-      <strong>Decision:</strong> Confirmed $6.55M revenue held a stable 27.7% profit margin across 3 years —
-      proved growth is margin-efficient, not volume-inflated. Flagged discount vs margin as a recurring KPI
-      for the finance function to monitor quarterly.
-    </div>
-    <p><strong>Problem:</strong> Retail business had 3 years of revenue growth but no visibility into whether margins
-    were holding or quietly eroding across products and regions.</p>
-    <p><strong>What I did:</strong> Built a 3-page executive Power BI dashboard with a star schema model and DAX measures
-    for Total Revenue, Profit Margin %, YoY/MoM Growth, and Top/Bottom N product rankings.</p>
-    <div class="proj-links">
-      <a href="https://github.com/rahulbhagat29/retail-executive-powerbi-dashboard" target="_blank" class="proj-link">↗ View on GitHub</a>
-    </div>
-  </div>
-
-  <!-- Project 3 — FinEdge -->
-  <div class="project-card">
-    <div class="proj-meta">
-      <span class="proj-tag">Power BI</span>
-      <span class="proj-tag">Power Query</span>
-      <span class="proj-tag">DAX</span>
-      <span class="proj-tag excel">Excel</span>
-    </div>
-    <h3>FinEdge Financial Performance Dashboard</h3>
+    <h3>FinEdge Financial Performance &amp; Profitability Analysis</h3>
     <p class="proj-domain">Finance / SaaS Domain &nbsp;|&nbsp; 2026</p>
     <div class="insight-box">
       <strong>Decision:</strong> Marketing overspent budget by 32%, Operations by 14% — enabled direct budget
@@ -530,27 +509,54 @@
     </div>
   </div>
 
-  <!-- Project 4 — Retail Excel KPI -->
+  <!-- Project 3 — Corporate Budget Variance -->
   <div class="project-card">
     <div class="proj-meta">
-      <span class="proj-tag excel">Advanced Excel</span>
-      <span class="proj-tag excel">Pivot Tables</span>
-      <span class="proj-tag excel">Power Query</span>
+      <span class="proj-tag sql">Advanced Excel</span>
+      <span class="proj-tag sql">Scenario Analysis</span>
+      <span class="proj-tag sql">Financial Modelling</span>
+      <span class="proj-tag sql">Variance Analysis</span>
     </div>
-    <h3>Retail Revenue Analysis &amp; Finance-Safe KPI Dashboard</h3>
-    <p class="proj-domain">Retail Domain &nbsp;|&nbsp; 2025</p>
+    <h3>Corporate Budget Variance Analysis &amp; Stress Test Model</h3>
+    <p class="proj-domain">Finance / Corporate &nbsp;|&nbsp; 2026</p>
     <div class="insight-box">
-      <strong>Decision:</strong> Net-to-gross alignment confirmed pricing discipline with minimal leakage.
-      Regional performance gaps and product category concentration flagged as two priority areas
-      for operational investigation.
+      <strong>Decision:</strong> Product B and Operations together drive 80% of adverse variance —
+      enabling targeted corrective action over broad cost cuts. Stress test showed a 58.7% Net P&amp;L
+      erosion (₹765L to ₹316L) under a −12% revenue and +8% cost scenario, giving management a
+      quantified threshold for contingency planning.
     </div>
-    <p><strong>Problem:</strong> Raw retail data contained refunds, zero-quantity rows, and pricing mismatches —
-    making revenue numbers untrustworthy for any business decision.</p>
-    <p><strong>What I did:</strong> Defined three finance-safe KPIs (Gross Sales, Net Revenue, Refund Impact),
-    treated each anomaly as a business logic decision, and built an executive dashboard with trend, risk,
-    and performance views.</p>
+    <p><strong>Problem:</strong> MidCore Industries had no stress-tested view of P&amp;L exposure — management
+    could not quantify how much margin erosion a combined revenue shortfall and cost overrun would produce,
+    making budget defence and scenario planning guesswork.</p>
+    <p><strong>What I did:</strong> Built a 4-sheet financial model covering FY2023–FY2024 across 8 line items
+    and 192 data rows with 2,264 formulas, zero errors. Engineered a Variance Engine with RAG status flags
+    and a 6×5 sensitivity table to stress test Net P&amp;L across revenue and cost combinations.</p>
     <div class="proj-links">
-      <a href="https://github.com/rahulbhagat29/retail-revenue-analysis" target="_blank" class="proj-link">↗ View on GitHub</a>
+      <a href="https://github.com/rahulbhagat29/corporate-budget-variance-model" target="_blank" class="proj-link">↗ View on GitHub</a>
+    </div>
+  </div>
+
+  <!-- Project 4 — Retail Executive Revenue & Margin -->
+  <div class="project-card">
+    <div class="proj-meta">
+      <span class="proj-tag excel">Power BI</span>
+      <span class="proj-tag excel">DAX</span>
+      <span class="proj-tag excel">Star Schema</span>
+      <span class="proj-tag excel">Time Intelligence</span>
+    </div>
+    <h3>Retail Executive Revenue &amp; Margin Performance Analysis</h3>
+    <p class="proj-domain">Retail Domain &nbsp;|&nbsp; 2026</p>
+    <div class="insight-box">
+      <strong>Decision:</strong> Confirmed $6.55M revenue held a stable 27.7% profit margin across 3 years —
+      proved growth is margin-efficient, not volume-inflated. Flagged discount vs margin as a recurring KPI
+      for the finance function to monitor quarterly.
+    </div>
+    <p><strong>Problem:</strong> Retail business had 3 years of revenue growth but no visibility into whether margins
+    were holding or quietly eroding across products and regions.</p>
+    <p><strong>What I did:</strong> Built a 3-page executive Power BI dashboard with a star schema model and DAX measures
+    for Total Revenue, Profit Margin %, YoY/MoM Growth, and Top/Bottom N product rankings.</p>
+    <div class="proj-links">
+      <a href="https://github.com/rahulbhagat29/retail-executive-powerbi-dashboard" target="_blank" class="proj-link">↗ View on GitHub</a>
     </div>
   </div>
 
@@ -587,7 +593,7 @@
   </div>
 </section>
 
-<!-- ── CONTACT — latest index.html, plain email ───────────────────────────── -->
+<!-- ── CONTACT ─────────────────────────────────────────────────────────────── -->
 <section id="contact">
   <div class="section-label">Get In Touch</div>
   <div class="section-title">Let's Connect</div>
@@ -596,7 +602,7 @@
     <a href="mailto:rahulbhagat2509@gmail.com" class="contact-link">
       <span class="icon">✉</span> rahulbhagat2509@gmail.com
     </a>
-    <a href="https://www.linkedin.com/in/rahul-bhagat-6439853b4" target="_blank" class="contact-link">
+    <a href="https://www.linkedin.com/in/rahulbhagat29" target="_blank" class="contact-link">
       <span class="icon">in</span> LinkedIn
     </a>
     <a href="https://github.com/rahulbhagat29" target="_blank" class="contact-link">
@@ -604,3 +610,13 @@
     </a>
     <a href="tel:+919321759915" class="contact-link">
       <span class="icon">☎</span> +91 93217 59915
+    </a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Rahul Bhagat. Built for Finance &amp; Business Analytics roles.
+</footer>
+
+</body>
+</html>
