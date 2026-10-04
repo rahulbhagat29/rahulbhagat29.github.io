@@ -327,13 +327,13 @@
   <div class="hero-text">
     <p class="greeting">Hello, I am</p>
     <h1>Rahul <span>Bhagat</span>.</h1>
-    <p class="hero-subtitle">Data Analyst &nbsp;/&nbsp; Finance & Business Analyst &nbsp;/&nbsp; Retail & E-Commerce Analyst</p>
+    <p class="hero-subtitle">Data Analyst &nbsp;/&nbsp; Finance, Fintech &amp; BFSI Analytics</p>
     <p>
-      Commerce graduate from the University of Mumbai transitioning into Data Analytics.
+      Commerce graduate from the University of Mumbai, now a Data Analyst Intern at a pharmaceutical
+      manufacturer working on global trade and supply-chain data.
       I build finance-safe, decision-ready dashboards — not decorative reports.
-      I focus on revenue, margin, and retention decisions.
-      My B.Com background gives me a natural edge in P&L, margin analysis, and revenue metrics
-      that most technically-trained candidates lack.
+      My B.Com background gives me a working grounding in P&amp;L, margin and variance analysis
+      that most technically-trained candidates do not start with.
     </p>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-primary">View My Projects</a>
@@ -341,16 +341,16 @@
     </div>
     <div class="hero-stats">
       <div class="stat">
-        <div class="stat-num">4</div>
+        <div class="stat-num">3</div>
         <div class="stat-label">End-to-End<br>Projects</div>
       </div>
       <div class="stat">
         <div class="stat-num">4</div>
-        <div class="stat-label">Tools<br>Mastered</div>
+        <div class="stat-label">Core Tools<br>Used Daily</div>
       </div>
       <div class="stat">
-        <div class="stat-num">3</div>
-        <div class="stat-label">ISO<br>Certifications</div>
+        <div class="stat-num">8</div>
+        <div class="stat-label">Month Analytics<br>Programme</div>
       </div>
     </div>
   </div>
@@ -370,17 +370,17 @@
       I understand P&L statements, gross margin trends, and revenue concentration risks before
       I touch a dataset.</p>
 
-      <p>I have worked on end-to-end projects in <strong>Retail, E-Commerce, and Finance
-      domains</strong> using Power BI, SQL, Advanced Excel, and Python. My work is consistently
-      framed around business decisions, not tool demonstrations.</p>
+      <p>I have built end-to-end projects across <strong>lending, SaaS finance and corporate
+      budgeting</strong> using Power BI, SQL, Advanced Excel, and Python. My work is framed around
+      business decisions, not tool demonstrations.</p>
 
       <!-- Certification paragraph — latest index.html version -->
-      <p>Certified by <strong>Digifine Academy of Digital Education, Mumbai</strong> — ISO Certified
-      in Data Analytics, Power BI, and Tableau (Mar 2026). Awarded a 3-month internship letter
-      on completion of the 6-month bootcamp.</p>
+      <p>Completed an <strong>8-month Data Analytics programme at Digifine Academy of Digital
+      Education, Mumbai</strong> (Sep 2025 – Apr 2026), covering Excel, SQL, Python, Power BI,
+      Tableau and Statistics with project work.</p>
 
       <!-- Target roles — latest index.html -->
-      <p>Targeting <strong>Data Analyst roles in Finance, E-Commerce, or Business Consulting</strong>
+      <p>Targeting <strong>Data Analyst roles in Finance, Fintech and BFSI</strong>
       where domain-grounded thinking is valued alongside technical execution.</p>
 
       <!-- Education block — old file -->
@@ -398,7 +398,6 @@
         <span class="proj-tag py">SQL / MySQL</span>
         <span class="proj-tag py">Python</span>
         <span class="proj-tag bi">Power BI</span>
-        <span class="proj-tag bi">Tableau</span>
         <span class="proj-tag excel">Advanced Excel</span>
         <span class="proj-tag py">Matplotlib</span>
         <span class="proj-tag py">Seaborn</span>
@@ -455,6 +454,11 @@
   <p style="font-size:.85rem; color:var(--muted); margin-top:-28px; margin-bottom:32px; font-style:italic;">
     Projects ranked by business impact and decision complexity.
   </p>
+  <p style="font-size:.85rem; color:var(--muted); margin-top:-24px; margin-bottom:32px;
+            background:var(--bg); border-left:3px solid var(--accent); padding:12px 16px; border-radius:0 6px 6px 0;">
+    <strong>Data provenance:</strong> all projects use public or simulated datasets. Figures shown are
+    outcomes of the analysis, not client results.
+  </p>
 
   <!-- Project 1 — LendingClub Loan Risk -->
   <div class="project-card">
@@ -468,18 +472,22 @@
     <h3>LendingClub Loan Risk &amp; Portfolio Profit Analysis</h3>
     <p class="proj-domain">Finance / Lending &nbsp;|&nbsp; 2026</p>
     <div class="insight-box">
-      <strong>Decision:</strong> Identified 15% default rate as the profit-maximising approval threshold —
-      below it, approvals erode margin; above it, viable loans are rejected unnecessarily.
-      Risk-based pricing at 1.5x makes Grade C/D/E High DTI segments profitable.
-      Grade F/G remain loss-making regardless of pricing and should be excluded from any approval policy.
+      <strong>Decision:</strong> A 15% default-rate cut-off returns the highest net profit of the thresholds
+      tested — $10.13M, approving 65.5% of segments at an 8.4% portfolio default rate. Risk-based pricing at
+      1.5&times; converts Grade C/D/E High-DTI segments from loss to profit. Grade F/G stay loss-making at every
+      pricing level tested and should be excluded from any approval policy.
+      <br><em style="font-size:.86rem;">Caveat: 15% is the tightest threshold simulated, so the optimum is not
+      yet bracketed — tighter cut-offs still need testing.</em>
     </div>
     <p><strong>Problem:</strong> Portfolio had no quantified approval policy — approving broadly increased
     defaults, approving conservatively left profitable loans rejected. No threshold existed to define
     where approval becomes profit-negative.</p>
-    <p><strong>What I did:</strong> Cleaned 2.26M rows (2007–2018) in Python and Pandas, ran multi-segment
+    <p><strong>Data:</strong> LendingClub public loan dataset (Kaggle) — 2,260,701 records, 151 columns,
+    2007–2018. Analysis runs on a random 50,000-row sample, 49,957 rows after cleaning.</p>
+    <p><strong>What I did:</strong> Cleaned the sample in Python and Pandas (null-column drop, core-field
+    filtering, median imputation on DTI and revolving utilisation, loan-to-income cap), ran multi-segment
     SQL analysis using a three-CTE master query across risk grades and DTI bands, and built a Python
-    policy simulation to identify the 15% threshold and model risk-based pricing scenarios across
-    borrower segments.</p>
+    policy simulation sweeping approval thresholds and a 1.5&times; risk-based pricing scenario.</p>
     <div class="proj-links">
       <a href="https://github.com/rahulbhagat29/loan-risk-analysis" target="_blank" class="proj-link">↗ View on GitHub</a>
     </div>
@@ -500,9 +508,10 @@
       reallocation recommendation before the next fiscal cycle. 39% revenue decline confirmed as market-level
       correction, not internal failure. Operating Margin held at 24.5% within SaaS benchmark.
     </div>
+    <p><strong>Data:</strong> Simulated B2B SaaS fintech dataset — 14,280 transactions after cleaning, FY2022–FY2024.</p>
     <p><strong>Problem:</strong> Finance dataset had 9 data quality issues across 14,280 rows blocking any reliable
     reporting — including inconsistent department names, mixed date formats, and unclassified transactions.</p>
-    <p><strong>What I did:</strong> Cleaned all data issues in Power Query and built 12 DAX measures from scratch
+    <p><strong>What I did:</strong> Cleaned all data issues in Power Query and built 17 DAX measures from scratch
     covering Operating Margin %, Variance %, Revenue per Employee, and Recurring Revenue %.</p>
     <div class="proj-links">
       <a href="https://github.com/rahulbhagat29/revenue-profitability-analysis-powerbi" target="_blank" class="proj-link">↗ View on GitHub</a>
@@ -520,45 +529,26 @@
     <h3>Corporate Budget Variance Analysis &amp; Stress Test Model</h3>
     <p class="proj-domain">Finance / Corporate &nbsp;|&nbsp; 2026</p>
     <div class="insight-box">
-      <strong>Decision:</strong> Product B and Operations together drive 80% of adverse variance —
-      enabling targeted corrective action over broad cost cuts. Stress test showed a 58.7% Net P&amp;L
-      erosion (₹765L to ₹316L) under a −12% revenue and +8% cost scenario, giving management a
-      quantified threshold for contingency planning.
+      <strong>Decision:</strong> Product B and Operations together drive the large majority of adverse
+      variance — enabling targeted corrective action over broad cost cuts. Under severe stress
+      (−12% revenue, +8% cost) Net P&amp;L falls from ₹765L to ₹276L, a 64% erosion; the business stays
+      profitable across the full modelled grid, with the worst case (−15% revenue, +12% cost) still
+      returning ₹114L.
     </div>
-    <p><strong>Problem:</strong> MidCore Industries had no stress-tested view of P&amp;L exposure — management
+    <p><strong>Data:</strong> Synthetic 192-row panel (8 line items × 24 months) modelled on mid-market
+    Indian manufacturing benchmarks, FY2023–FY2024.</p>
+    <p><strong>Problem:</strong> The modelled business had no stress-tested view of P&amp;L exposure — management
     could not quantify how much margin erosion a combined revenue shortfall and cost overrun would produce,
     making budget defence and scenario planning guesswork.</p>
-    <p><strong>What I did:</strong> Built a 4-sheet financial model covering FY2023–FY2024 across 8 line items
-    and 192 data rows with 2,264 formulas, zero errors. Engineered a Variance Engine with RAG status flags
-    and a 6×5 sensitivity table to stress test Net P&amp;L across revenue and cost combinations.</p>
+    <p><strong>What I did:</strong> Built a 6-sheet financial model covering FY2023–FY2024 across 8 line items
+    and 191 cleaned data rows with 2,266 formulas, zero errors. Engineered a Variance Engine with RAG status
+    flags and a 6×5 sensitivity table (30 scenarios) to stress test Net P&amp;L across revenue and cost
+    combinations.</p>
     <div class="proj-links">
       <a href="https://github.com/rahulbhagat29/corporate-budget-variance-model" target="_blank" class="proj-link">↗ View on GitHub</a>
     </div>
   </div>
 
-  <!-- Project 4 — Retail Executive Revenue & Margin -->
-  <div class="project-card">
-    <div class="proj-meta">
-      <span class="proj-tag excel">Power BI</span>
-      <span class="proj-tag excel">DAX</span>
-      <span class="proj-tag excel">Star Schema</span>
-      <span class="proj-tag excel">Time Intelligence</span>
-    </div>
-    <h3>Retail Executive Revenue &amp; Margin Performance Analysis</h3>
-    <p class="proj-domain">Retail Domain &nbsp;|&nbsp; 2026</p>
-    <div class="insight-box">
-      <strong>Decision:</strong> Confirmed $6.55M revenue held a stable 27.7% profit margin across 3 years —
-      proved growth is margin-efficient, not volume-inflated. Flagged discount vs margin as a recurring KPI
-      for the finance function to monitor quarterly.
-    </div>
-    <p><strong>Problem:</strong> Retail business had 3 years of revenue growth but no visibility into whether margins
-    were holding or quietly eroding across products and regions.</p>
-    <p><strong>What I did:</strong> Built a 3-page executive Power BI dashboard with a star schema model and DAX measures
-    for Total Revenue, Profit Margin %, YoY/MoM Growth, and Top/Bottom N product rankings.</p>
-    <div class="proj-links">
-      <a href="https://github.com/rahulbhagat29/retail-executive-powerbi-dashboard" target="_blank" class="proj-link">↗ View on GitHub</a>
-    </div>
-  </div>
 
 </section>
 <!-- ── CERTIFICATIONS ─────────────────────────────────────────────────────── -->
@@ -567,28 +557,22 @@
   <div class="section-title">Certifications</div>
   <div class="cert-grid">
     <div class="cert-card">
-      <h4>ISO Certified: Data Analytics</h4>
+      <h4>Data Analytics Certification</h4>
       <div class="issuer">Digifine Academy of Digital Education, Mumbai</div>
-      <div class="cert-date">March 2026</div>
-      <p>ISO-recognised certification covering end-to-end data analytics methodology, KPI design, and business reporting.</p>
+      <div class="cert-date">Sep 2025 – Apr 2026 &nbsp;|&nbsp; 8-month programme</div>
+      <p>Excel, SQL, Python (Pandas, NumPy, Matplotlib, Seaborn), Power BI, Tableau and Statistics, with project work.</p>
     </div>
     <div class="cert-card">
-      <h4>ISO Certified: Power BI</h4>
-      <div class="issuer">Digifine Academy of Digital Education, Mumbai</div>
-      <div class="cert-date">March 2026</div>
-      <p>ISO-recognised certification in Power BI dashboard development, DAX measures, and data modelling.</p>
+      <h4>Data Analytics Job Simulation</h4>
+      <div class="issuer">Deloitte Australia (via Forage)</div>
+      <div class="cert-date">June 2026</div>
+      <p>Practical tasks in data analysis and forensic technology. Verification code gJ9z6WCWXXuvDEfeh.</p>
     </div>
     <div class="cert-card">
-      <h4>ISO Certified: Tableau</h4>
-      <div class="issuer">Digifine Academy of Digital Education, Mumbai</div>
-      <div class="cert-date">March 2026</div>
-      <p>ISO-recognised certification in Tableau visualisation, dashboard design, and analytical reporting.</p>
-    </div>
-    <div class="cert-card">
-      <h4>Data Analytics Bootcamp — 6 Months</h4>
-      <div class="issuer">Digifine Academy of Digital Education, Mumbai</div>
-      <div class="cert-date">March 2026 &nbsp;|&nbsp; Includes 3-Month Internship Letter</div>
-      <p>Covered Excel, SQL, Python (Pandas, NumPy, Matplotlib, Seaborn), Power BI, Tableau, and Statistics with live project work.</p>
+      <h4>SQL (Basic) — Certificate of Accomplishment</h4>
+      <div class="issuer">HackerRank</div>
+      <div class="cert-date">August 2026</div>
+      <p>Skill certification test covering queries, filtering, aggregation and joins. Certificate ID 906DFC680334.</p>
     </div>
   </div>
 </section>
@@ -597,7 +581,7 @@
 <section id="contact">
   <div class="section-label">Get In Touch</div>
   <div class="section-title">Let's Connect</div>
-  <p class="sub">I am open to Data Analyst opportunities in Finance, E-Commerce, and Business Analytics.</p>
+  <p class="sub">I am open to Data Analyst opportunities in Finance, Fintech and BFSI.</p>
   <div class="contact-links">
     <a href="mailto:rahulbhagat2509@gmail.com" class="contact-link">
       <span class="icon">✉</span> rahulbhagat2509@gmail.com
